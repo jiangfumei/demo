@@ -1,0 +1,10 @@
+# Swagger界面内容配置
+swagger:
+  title: Demo  API接口文档
+  Description: Demo Api Documentation
+  version: 1.0.0
+  termOfServiceUrl: http://jiangfumei.github.io
+  contract:
+    name: jiangfumei
+    url: http://jiangfumei.github.io
+    email: 2515651182@qq.com
