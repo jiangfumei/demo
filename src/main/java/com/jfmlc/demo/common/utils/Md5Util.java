@@ -1,8 +1,5 @@
 package com.jfmlc.demo.common.utils;
 
-import org.springframework.util.DigestUtils;
-
-import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.text.SimpleDateFormat;
 import java.util.Date;

@@ -30,7 +30,7 @@ spring:
     host: 47.94.235.166
     password: jfm666
     #数据库索引  默认为0
-    database: 0
+    database: 1
     port: 6379
     timeout: 3000
 
