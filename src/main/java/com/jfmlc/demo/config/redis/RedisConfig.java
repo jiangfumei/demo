@@ -44,6 +44,25 @@ public class RedisConfig{
     @Value("${spring.redis.password}")
     private String password;
 
+    /**
+     * @Cacheable
+     *
+     * 表明spring在调用方法之前，首先应该在缓存中查找方法的返回值。如果这个值能够找到，就会返回缓存的值。否则的话，这个方法就会被调用，返回值会放到缓存之中。
+     *
+     * @CachePut
+     *
+     * 表明spring应该将方法的返回值放到缓存中。在方法的调用前不会检查缓存，方法始终都会被调用。
+     *
+     * @CacheEvict
+     *
+     * 表明spring应该在缓存中清除一个或多个条目
+     *
+     * @Caching
+     *
+     * 这是一个分组的注解，能够同时应用多个其它的缓存注解。
+     */
+
+
     @Bean
     public KeyGenerator KeyGenerator() {
         return new KeyGenerator() {
@@ -78,6 +97,12 @@ public class RedisConfig{
         RedisCacheManager cacheManager = new RedisCacheManager(redisCacheWriter, defaultCacheConfig);
         return cacheManager;
     }
+
+   /* @Bean
+    public CacheManager cacheManager(RedisConnectionFactory redisConnectionFactory) {
+        RedisCacheManager redisCacheManager = RedisCacheManager.builder(redisConnectionFactory).build();
+        return redisCacheManager;
+    }*/
    /* public CacheManager cacheManager(RedisTemplate redisTemplate) {
         RedisCacheManager rcm = new RedisCacheManager(redisTemplate);
         //设置缓存过期时间
