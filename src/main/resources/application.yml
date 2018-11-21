@@ -34,6 +34,7 @@ spring:
     port: 6379
     timeout: 3000
 
+
 # Mybaits-plus
 mybatis:
   # 放在resource目录 classpath:/mapper/*Mapper.xml

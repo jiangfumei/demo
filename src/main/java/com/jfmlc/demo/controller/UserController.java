@@ -1,6 +1,9 @@
 package com.jfmlc.demo.controller;
 
 import io.swagger.annotations.Api;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 
 /**
  * @author fumei
@@ -8,4 +11,15 @@ import io.swagger.annotations.Api;
  */
 @Api(value = "用户管理")
 public class UserController {
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
+
+
+    public void add(){
+        stringRedisTemplate.opsForValue();
+
+    }
 }
