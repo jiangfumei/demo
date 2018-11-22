@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-
-<taglib xmlns="http://java.sun.com/xml/ns/javaee"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
-        version="2.1">
-
-    <tlib-version>1.0</tlib-version>
-    <short-name>myshortname</short-name>
-    <uri>http://mycompany.com</uri>
-
-    <!-- Invoke 'Generate' action to add tags or functions -->
-
-</taglib>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jfmlc.demo.dao.mapper.DemoMapper">
+    <select id="selectDemoById" resultMap="com.jfmlc.demo.domain.Demo">
+        select * from t_demo where demo_id = #{demoId}
+    </select>
+    <insert id="insertDemo">
+        insert into t_demo (name) values (#{name})
+    </insert>
+</mapper>
