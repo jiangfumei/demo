@@ -1,9 +1,13 @@
 package com.jfmlc.demo.base;
 
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.jfmlc.demo.common.utils.SnowFlakeUtil;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -12,7 +16,14 @@ import java.util.Date;
  */
 @Data
 @Entity
-public class BaseEntity {
+public class BaseEntity implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @TableId
+    @ApiModelProperty(value = "唯一标识 id")
+    private String id = String.valueOf(SnowFlakeUtil.getFlowIdInstance().nextId());
 
     @ApiModelProperty(value = "创建日期")
     private Date createDate;
