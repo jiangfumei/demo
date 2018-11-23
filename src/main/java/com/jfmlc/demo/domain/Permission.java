@@ -4,7 +4,6 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import javax.persistence.Entity;
-import java.io.Serializable;
 
 /**
  * @author fumei
@@ -13,6 +12,8 @@ import java.io.Serializable;
 @Data
 @Entity
 public class Permission {
+
+    private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "菜单/权限名称")
     private String name;

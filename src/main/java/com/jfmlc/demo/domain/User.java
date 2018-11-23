@@ -1,9 +1,13 @@
 package com.jfmlc.demo.domain;
 
+import com.jfmlc.demo.base.BaseEntity;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
+import javax.persistence.MappedSuperclass;
 import java.util.List;
 
 /**
@@ -12,7 +16,10 @@ import java.util.List;
  */
 @Data
 @Entity
-public class User {
+public class User extends BaseEntity {
+
+    private static final long serialVersionUID = 1L;
+
 
     @ApiModelProperty(value = "用户名")
     private String userName;

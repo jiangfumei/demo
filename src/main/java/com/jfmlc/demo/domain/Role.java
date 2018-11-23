@@ -13,6 +13,8 @@ import javax.persistence.Entity;
 @Entity
 public class Role {
 
+    private static final long serialVersionUID = 1L;
+
     @ApiModelProperty(value = "角色名称")
     private String name;
 }

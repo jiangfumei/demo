@@ -35,7 +35,7 @@ public class DemoController {
         Demo demo = new Demo();
         demo.setName("李四");
         Integer i = demoMapper.insert(demo);
-        Long id = demo.getId();
+        String id = demo.getId();
         System.err.println("影响行数==>" + i);
         System.err.println("id==>" + id);
     }
