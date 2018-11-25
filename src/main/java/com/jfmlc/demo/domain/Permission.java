@@ -1,9 +1,12 @@
 package com.jfmlc.demo.domain;
 
+import com.baomidou.mybatisplus.annotations.TableName;
+import com.jfmlc.demo.base.BaseEntity;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * @author fumei
@@ -11,7 +14,9 @@ import javax.persistence.Entity;
  */
 @Data
 @Entity
-public class Permission {
+@Table(name = "t_permission")
+@TableName("t_permission")
+public class Permission extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 

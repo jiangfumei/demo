@@ -25,7 +25,6 @@ import java.util.Date;
  * @date 2018-11-21 15:00
  */
 @Data
-@Entity
 @EntityListeners(AuditingEntityListener.class)//添加监听器
 @MappedSuperclass
 public class BaseEntity implements Serializable {

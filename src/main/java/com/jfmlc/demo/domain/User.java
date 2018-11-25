@@ -1,5 +1,6 @@
 package com.jfmlc.demo.domain;
 
+import com.baomidou.mybatisplus.annotations.TableName;
 import com.jfmlc.demo.base.BaseEntity;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -8,6 +9,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.Table;
 import java.util.List;
 
 /**
@@ -16,6 +18,8 @@ import java.util.List;
  */
 @Data
 @Entity
+@Table(name = "t_user")
+@TableName("t_user")
 public class User extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
@@ -33,8 +37,8 @@ public class User extends BaseEntity {
     @ApiModelProperty(value = "头像")
     private String avatar;
 
-    @ApiModelProperty(value = "用户拥有角色")
-    private List<Role> roles;
+   /* @ApiModelProperty(value = "用户拥有角色")
+    private List<Role> roles;*/
 
 
 }

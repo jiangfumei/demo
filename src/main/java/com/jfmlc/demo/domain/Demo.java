@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * @author fumei
@@ -13,6 +14,7 @@ import javax.persistence.Entity;
  */
 @Data
 @Entity
+@Table(name = "t_demo")
 @TableName("t_demo")
 public class Demo extends BaseEntity {
 
