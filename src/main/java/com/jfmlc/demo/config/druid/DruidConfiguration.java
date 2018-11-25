@@ -109,7 +109,7 @@ public class DruidConfiguration {
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(new WebStatFilter());
         //设置过滤器过滤路径
         filterRegistrationBean.addUrlPatterns("/*");
-        //忽略过滤的形式
+        //忽略过滤的q:w形式
         filterRegistrationBean.addInitParameter("exclusions","*.gif,*.png,*.jpg,*.html,*.js,*.css,*.ico,/druid/*");
         return filterRegistrationBean;
     }*/
