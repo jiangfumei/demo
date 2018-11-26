@@ -2,6 +2,7 @@ package com.jfmlc.demo.domain;
 
 import com.baomidou.mybatisplus.annotations.TableName;
 import com.jfmlc.demo.base.BaseEntity;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
@@ -16,6 +17,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "t_permission")
 @TableName("t_permission")
+@ApiModel(value = "权限对象")
 public class Permission extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
