@@ -1,4 +1,4 @@
-package com.jfmlc.demo.dao;
+package com.jfmlc.demo.modules.base.dao;
 
 /**
  * @author fumei

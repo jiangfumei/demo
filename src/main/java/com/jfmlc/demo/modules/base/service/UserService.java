@@ -1,4 +1,4 @@
-package com.jfmlc.demo.service;
+package com.jfmlc.demo.modules.base.service;
 
 /**
  * @author fumei

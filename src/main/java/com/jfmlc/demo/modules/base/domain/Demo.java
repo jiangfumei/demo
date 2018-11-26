@@ -1,4 +1,4 @@
-package com.jfmlc.demo.domain;
+package com.jfmlc.demo.modules.base.domain;
 
 import com.baomidou.mybatisplus.annotations.TableName;
 import com.jfmlc.demo.base.BaseEntity;
@@ -11,16 +11,20 @@ import javax.persistence.Table;
 
 /**
  * @author fumei
- * @date 2018-11-19 14:41
+ * @date 2018-11-22 14:28
  */
 @Data
 @Entity
-@Table(name = "t_role")
-@TableName("t_role")
-@ApiModel(value = "角色对象")
-public class Role extends BaseEntity {
+@Table(name = "t_demo")
+@TableName("t_demo")
+@ApiModel(value = "demo对象")
+public class Demo extends BaseEntity {
+
     private static final long serialVersionUID = 1L;
 
-    @ApiModelProperty(value = "角色名称")
+
+    @ApiModelProperty(value = "demo name")
     private String name;
+
+
 }
