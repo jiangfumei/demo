@@ -1,7 +1,7 @@
-package com.jfmlc.demo.controller;
+package com.jfmlc.demo.modules.base.controller;
 
-import com.jfmlc.demo.dao.mapper.DemoMapper;
-import com.jfmlc.demo.domain.Demo;
+import com.jfmlc.demo.modules.base.dao.mapper.DemoMapper;
+import com.jfmlc.demo.modules.base.domain.Demo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

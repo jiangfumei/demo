@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jfmlc.demo.dao.mapper.DemoMapper">
-    <select id="selectDemoById" resultMap="com.jfmlc.demo.domain.Demo">
+<mapper namespace="com.jfmlc.demo.modules.base.dao.mapper.DemoMapper">
+    <select id="selectDemoById" resultMap="com.jfmlc.demo.modules.base.domain.Demo">
         select * from t_demo where demo_id = #{demoId}
     </select>
     <insert id="insertDemo">

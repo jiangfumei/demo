@@ -1,7 +1,7 @@
-package com.jfmlc.demo.dao.mapper;
+package com.jfmlc.demo.modules.base.dao.mapper;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
-import com.jfmlc.demo.domain.Demo;
+import com.jfmlc.demo.modules.base.domain.Demo;
 
 /**
  * @author fumei

@@ -1,7 +1,7 @@
-package com.jfmlc.demo.service.mapper;
+package com.jfmlc.demo.modules.base.service.mapper;
 
 import com.baomidou.mybatisplus.service.IService;
-import com.jfmlc.demo.domain.Demo;
+import com.jfmlc.demo.modules.base.domain.Demo;
 
 
 /**
