@@ -105,10 +105,10 @@ public class BootGenerator {
      */
     private static void generateCode(GroupTemplate gt) throws IOException{
 
-        Template entityTemplate = gt.getTemplate("entity.btl");
+        Template entityTemplate = gt.getTemplate("domain.btl");
         Template daoTemplate = gt.getTemplate("dao.btl");
         Template serviceTemplate = gt.getTemplate("service.btl");
-        Template serviceImplTemplate = gt.getTemplate("serviceImpl.btl");
+        //Template serviceImplTemplate = gt.getTemplate("serviceImpl.btl");
         Template controllerTemplate = gt.getTemplate("controller.btl");
 
         EntityOfEntity entity = new EntityOfEntity();
