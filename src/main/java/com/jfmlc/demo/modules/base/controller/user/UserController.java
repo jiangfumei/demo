@@ -1,4 +1,4 @@
-package com.jfmlc.demo.modules.base.controller;
+package com.jfmlc.demo.modules.base.controller.user;
 
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;

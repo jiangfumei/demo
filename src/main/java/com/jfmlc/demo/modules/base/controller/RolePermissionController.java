@@ -2,7 +2,7 @@ package com.jfmlc.demo.modules.base.controller;
 
 import com.jfmlc.demo.base.BaseController;
 import com.jfmlc.demo.modules.base.service.RolePermissionService;
-import com.jfmlc.demo.modules.base.domain.RolePermission;
+import com.jfmlc.demo.modules.base.domain.user.RolePermission;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;

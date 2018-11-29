@@ -1,7 +1,7 @@
 package com.jfmlc.demo.modules.base.service;
 
 import com.jfmlc.demo.base.BaseService;
-import com.jfmlc.demo.modules.base.domain.UserRole;
+import com.jfmlc.demo.modules.base.domain.user.UserRole;
 
 /**
  * @author fumei
