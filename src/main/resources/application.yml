@@ -87,6 +87,10 @@ spring:
     database: 1
     port: 6379
     timeout: 3000
+  # Elasticsearch
+  data:
+    elasticsearch:
+      cluster-nodes: 39.105.223.19:9200
 
 
 # Mybaits-plus
