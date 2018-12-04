@@ -20,7 +20,7 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/demo?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     # Jasypt加密 可到common-utils中找到JasyptUtil加解密工具类生成加密结果 格式为ENC(加密结果)
-    password: ENC(F4B0s6u9xcDw3V+P0qC4CA==)
+    password: root
     # 使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver
@@ -95,8 +95,8 @@ spring:
 
 # Mybaits-plus
 mybatis-plus:
-  # 放在resource目录 classpath:/mapper/*Mapper.xml
-  mapper-locations: classpath:/mapper/*Mapper.xml
+  # 放在resource目录 classpath:/mybaits/*Mapper.xml
+  mapper-locations: classpath:/mybaits/*Mapper.xml
   # 实体扫描，多个package用逗号或分号分隔
   type-aliases-package: com.jfmlc.demo.*.*.domain
   type-enums-package: com.jfmlc.demo.*.*.domain
@@ -117,7 +117,7 @@ mybatis-plus:
     logic-delete-value: 0
     logic-not-delete-value: 1
     #自定义SQL注入器
-    #sql-injector: com.baomidou.mybatisplus.mapper.LogicSqlInjector
+    #sql-injector: com.baomidou.mybatisplus.mybaits.LogicSqlInjector
     # sql 解析缓存，开启后多租户 @SqlParser 注解生效
     sql-parser-cache: true
     #自定义填充策略接口实现

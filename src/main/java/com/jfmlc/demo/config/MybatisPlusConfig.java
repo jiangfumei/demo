@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
  * @date 2018-11-22 14:05
  */
 @Configuration
-@MapperScan(basePackages = "com.jfmlc.demo.modules.*.*.mapper")
+@MapperScan(basePackages = "com.jfmlc.demo.modules.base.dao.mapper")
 public class MybatisPlusConfig {
     /*
      * 分页插件，自动识别数据库类型

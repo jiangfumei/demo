@@ -70,7 +70,7 @@ public class BootGenerator {
      * serviceImpl对应包
      * (文件自动生成至该包下)
      */
-   // private static final String serviceImplPackage = "com.jfmlc.demo.modules.base.serviceimpl";
+    private static final String serviceImplPackage = "com.jfmlc.demo.modules.base.serviceimpl";
 
     /**
      * controller对应包
@@ -108,14 +108,14 @@ public class BootGenerator {
         Template entityTemplate = gt.getTemplate("domain.btl");
         Template daoTemplate = gt.getTemplate("dao.btl");
         Template serviceTemplate = gt.getTemplate("service.btl");
-        //Template serviceImplTemplate = gt.getTemplate("serviceImpl.btl");
+        Template serviceImplTemplate = gt.getTemplate("serviceImpl.btl");
         Template controllerTemplate = gt.getTemplate("controller.btl");
 
         EntityOfEntity entity = new EntityOfEntity();
         entity.setDomainPackage(domainPackage);
         entity.setDaoPackage(daoPackage);
         entity.setServicePackage(servicePackage);
-        //entity.setServiceImplPackage(serviceImplPackage);
+        entity.setServiceImplPackage(serviceImplPackage);
         entity.setControllerPackage(controllerPackage);
         entity.setAuthor(author);
         entity.setClassName(className);
@@ -163,7 +163,7 @@ public class BootGenerator {
         serviceTemplate.renderTo(out);
 
         //生成serviceImpl代码
-       /* serviceImplTemplate.binding("entity",entity);
+        serviceImplTemplate.binding("entity",entity);
         String serviceImplResult = serviceImplTemplate.render();
         log.info(serviceImplResult);
         //创建文件
@@ -172,7 +172,6 @@ public class BootGenerator {
         serviceImplFile.createNewFile();
         out = new FileOutputStream(serviceImplFile);
         serviceImplTemplate.renderTo(out);
-*/
         //生成controller代码
         controllerTemplate.binding("entity",entity);
         String controllerResult = controllerTemplate.render();
@@ -212,11 +211,11 @@ public class BootGenerator {
             serviceFile.delete();
         }
 
-       /* String serviceImplFileUrl = System.getProperty("user.dir")+"/src/main/java/"+ dotToLine(serviceImplPackage) + "/" +className+"ServiceImpl.java";
+        String serviceImplFileUrl = System.getProperty("user.dir")+"/src/main/java/"+ dotToLine(serviceImplPackage) + "/" +className+"ServiceImpl.java";
         File serviceImplFile = new File(serviceImplFileUrl);
         if(serviceImplFile.exists()){
             serviceImplFile.delete();
-        }*/
+        }
 
         String controllerFileUrl = System.getProperty("user.dir")+"/src/main/java/"+ dotToLine(controllerPackage) + "/" +className+"Controller.java";
         File controllerFile = new File(controllerFileUrl);
