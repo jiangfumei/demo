@@ -1,7 +1,7 @@
-package com.jfmlc.demo.modules.base.dao;
+package com.jfmlc.demo.modules.base.dao.user;
 
 import com.jfmlc.demo.base.BaseDao;
-import com.jfmlc.demo.modules.base.domain.RolePermission;
+import com.jfmlc.demo.modules.base.domain.user.RolePermission;
 
 /**
 *@author fumei

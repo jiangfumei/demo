@@ -1,4 +1,4 @@
-package com.jfmlc.demo.modules.base.domain;
+package com.jfmlc.demo.modules.base.domain.user;
 
 import com.baomidou.mybatisplus.annotations.TableName;
 import com.jfmlc.demo.base.BaseEntity;
@@ -12,9 +12,9 @@ import javax.persistence.Table;
 */
 @Data
 @Entity
-@Table(name = "t_user_role")
-@TableName("t_user_role")
-public class UserRole extends BaseEntity {
+@Table(name = "t_role_permission")
+@TableName("t_role_permission")
+public class RolePermission extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
