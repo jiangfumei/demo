@@ -126,6 +126,14 @@ mybatis-plus:
     map-underscore-to-camel-case: true
     cache-enabled: false
 
+demo:
+  # ES
+  elasticsearch:
+    nodeClient: 39.105.223.19:9200
+  # 日志记录方式 true使用Elasticsearch记录 false记录至数据库中
+  logRecord:
+    es: false
+
 # 日志
 logging:
   file: demo-logs/demo.log

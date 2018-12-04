@@ -23,13 +23,13 @@ public class BootGenerator {
      * 实体类名
      * 建议仅需修改
      */
-    private static final String className = "Log";
+    private static final String className = "EsLog";
 
     /**
      * 类说明描述
      * 建议仅需修改
      */
-    private static final String description = "日志管理";
+    private static final String description = "信息";
 
     /**
      * 作者名
@@ -92,10 +92,10 @@ public class BootGenerator {
         GroupTemplate gt = new GroupTemplate(resourceLoader, cfg);
 
         //生成代码
-        generateCode(gt);
+        //generateCode(gt);
 
         //根据类名删除生成的代码
-        //deleteCode(className);
+        deleteCode(className);
     }
 
     /**
