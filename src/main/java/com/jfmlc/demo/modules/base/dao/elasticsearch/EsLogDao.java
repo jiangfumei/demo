@@ -18,6 +18,6 @@ public interface EsLogDao extends ElasticsearchRepository<EsLog, String> {
      * @param pageable
      * @return
      */
-    Page<EsLog> findByogType(Integer type, Pageable pageable);
+    Page<EsLog> findByLogType(Integer type, Pageable pageable);
 
 }

@@ -1,6 +1,5 @@
 package com.jfmlc.demo.modules.base.service.elasticsearch;
 
-import com.jfmlc.demo.base.BaseService;
 import com.jfmlc.demo.common.vo.SearchVo;
 import com.jfmlc.demo.modules.base.domain.elasticsearch.EsLog;
 import org.springframework.data.domain.Page;
@@ -11,7 +10,7 @@ import org.springframework.data.domain.Pageable;
  * @author fumei
  * @date 2018-11-26 13:47
  */
-public interface EsLogService extends BaseService<EsLog,String> {
+public interface EsLogService{
 
         /**
          * 添加日志
