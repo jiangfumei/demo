@@ -1,6 +1,5 @@
 package com.jfmlc.demo.modules.base.controller;
 
-import com.jfmlc.demo.base.BaseController;
 import com.jfmlc.demo.common.utils.PageUtil;
 import com.jfmlc.demo.common.utils.ResultUtil;
 import com.jfmlc.demo.common.vo.PageVo;
@@ -17,10 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 /**
@@ -32,10 +28,10 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(description = "日志管理管理接口")
 @RequestMapping("/demo/log")
 @Transactional
-public class LogController extends BaseController<Log, String>{
+public class LogController{
 
         @Value("${demo.logRecord.es}")
-        private String esRecord;
+        private Boolean esRecord;
 
         @Autowired
         private EsLogService esLogService;
@@ -43,7 +39,7 @@ public class LogController extends BaseController<Log, String>{
         @Autowired
         private LogService logService;
 
-        @Override
+        @Autowired
         public LogService getService(){
                 return logService;
                 }
@@ -53,18 +49,41 @@ public class LogController extends BaseController<Log, String>{
                                            @RequestParam String key,
                                            @ModelAttribute SearchVo searchVo,
                                            @ModelAttribute PageVo pageVo){
-                return null;
 
-               /* if(esRecord){
-                        Page<EsLog> es = esLogService.findByConfition(type, key, searchVo, PageUtil.initPage(pageVo));
+                if(esRecord){
+                        Page<EsLog> es = esLogService.findByCondition(type, key, searchVo, PageUtil.initPage(pageVo));
                         return new ResultUtil<Object>().setData(es);
                 }else{
-                        Page<Log> log = logService.findByConfition(type, key, searchVo, PageUtil.initPage(pageVo));
+                        Page<Log> log = logService.findByCondition(type, key, searchVo, PageUtil.initPage(pageVo));
                         return new ResultUtil<Object>().setData(log);
-                }*/
+                }
+        }
+
+        @RequestMapping(value = "/delByIds/{ids}",method = RequestMethod.DELETE)
+        @ApiOperation(value = "批量删除")
+        public Result<Object> delByIds(@PathVariable String[] ids){
+                for (String id : ids){
+                        if (esRecord){
+                                esLogService.deleteLog(id);
+                        }else {
+                                logService.delete(id);
+                        }
+                }
+                return new ResultUtil<Object>().setSuccessMsg("删除成功");
         }
 
 
+        @RequestMapping(value = "/delAll",method = RequestMethod.DELETE)
+        @ApiOperation(value = "删除全部")
+        public Result<Object> delAll(){
+                if (esRecord){
+                        esLogService.deleteAll();
+                }else {
+                        logService.deleteAll();
+                }
+                return new ResultUtil<Object>().setSuccessMsg("删除全部成功");
+
+        }
 
 
 }
