@@ -17,7 +17,7 @@ public interface EsLogService{
          * @param esLog
          * @return
          */
-        EsLog saveog(EsLog esLog);
+        EsLog saveLog(EsLog esLog);
 
         /**
          * 通过id删除日志

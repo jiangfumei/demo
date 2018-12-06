@@ -27,10 +27,8 @@ public class EsLogServiceImpl implements EsLogService {
     @Autowired
     private EsLogDao logDao;
 
-
     @Override
-    public EsLog saveog(EsLog esLog) {
-
+    public EsLog saveLog(EsLog esLog) {
         return logDao.save(esLog);
     }
 
