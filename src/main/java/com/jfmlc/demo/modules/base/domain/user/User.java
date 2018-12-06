@@ -1,8 +1,9 @@
-package com.jfmlc.demo.modules.base.domain;
+package com.jfmlc.demo.modules.base.domain.user;
 
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableName;
 import com.jfmlc.demo.base.BaseEntity;
+import com.jfmlc.demo.modules.base.domain.user.Role;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

@@ -1,7 +1,7 @@
-package com.jfmlc.demo.modules.base.controller;
+package com.jfmlc.demo.modules.base.controller.user;
 
 import com.jfmlc.demo.base.BaseController;
-import com.jfmlc.demo.modules.base.domain.UserRole;
+import com.jfmlc.demo.modules.base.domain.user.UserRole;
 import com.jfmlc.demo.modules.base.service.UserRoleService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,3 +29,24 @@ public UserRoleService getService(){
         }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
