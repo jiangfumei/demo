@@ -1,7 +1,6 @@
 package com.jfmlc.demo.common.aop;
 
 import com.jfmlc.demo.common.annotation.SystemLog;
-import com.jfmlc.demo.common.utils.ThreadPoolUtil;
 import com.jfmlc.demo.modules.base.domain.Log;
 import com.jfmlc.demo.modules.base.domain.elasticsearch.EsLog;
 import com.jfmlc.demo.modules.base.service.LogService;
@@ -50,7 +49,7 @@ public class SystemLogAspect {
      * Controller层切点，注解方式
      */
 
-    @Pointcut("@annotation(com.jfmlc.demo.common.annotation.SysteLog)")
+    @Pointcut("@annotation(com.jfmlc.demo.common.annotation.SystemLog)")
     public void controllerAspect(){
 
     }
