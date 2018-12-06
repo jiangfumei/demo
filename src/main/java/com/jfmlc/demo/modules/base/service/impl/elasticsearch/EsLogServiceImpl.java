@@ -2,7 +2,6 @@ package com.jfmlc.demo.modules.base.service.impl.elasticsearch;
 
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.StrUtil;
-import com.jfmlc.demo.base.BaseDao;
 import com.jfmlc.demo.common.vo.SearchVo;
 import com.jfmlc.demo.modules.base.dao.elasticsearch.EsLogDao;
 import com.jfmlc.demo.modules.base.domain.elasticsearch.EsLog;
@@ -10,7 +9,6 @@ import com.jfmlc.demo.modules.base.service.elasticsearch.EsLogService;
 import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
-import org.hibernate.cfg.annotations.QueryBinder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -50,15 +48,32 @@ public class EsLogServiceImpl implements EsLogService {
 
     @Override
     public Page<EsLog> findByCondition(Integer type, String key, SearchVo searchVo, Pageable pageable) {
-        if (type==null&& StrUtil.isBlank(key)&&StrUtil.isBlank((searchVo.getStartDate()))){
+        if (type==null && StrUtil.isBlank(key) && StrUtil.isBlank((searchVo.getStartDate()))){
             // 无过滤条件获取全部
             return logDao.findAll(pageable);
-        }else if (type!=null&&StrUtil.isBlank(key)&&StrUtil.isBlank(searchVo.getStartDate())){
+        }else if (type!=null && StrUtil.isBlank(key) && StrUtil.isBlank(searchVo.getStartDate())){
             //仅有type
             return logDao.findByLogType(type,pageable);
         }
 
+        //术语查询
         QueryBuilder qb;
+
+        /**
+         * 使用QueryBuilder
+         * termQuery("key", obj) 完全匹配
+         * termsQuery("key", obj1, obj2..)   一次匹配多个值
+         * matchQuery("key", Obj) 单个匹配, field不支持通配符, 前缀具高级特性
+         * multiMatchQuery("text", "field1", "field2"..);  匹配多个字段, field有通配符忒行
+         * matchAllQuery();         匹配所有文件
+         */
+        /**
+         * 组合查询
+         * must(QueryBuilders) :   AND
+         * mustNot(QueryBuilders): NOT
+         * should:                  : OR
+         * 其中must表示必须满足,mustNot表示必须不满足,should表示可有可无
+         */
 
         QueryBuilder qb0 = QueryBuilders.termQuery("logType",type);
         QueryBuilder qb1 = QueryBuilders.multiMatchQuery(key,"name","requestUrl","requestType","requestParam","userName","ip","ipInfo");
