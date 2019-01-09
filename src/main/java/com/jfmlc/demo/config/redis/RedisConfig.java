@@ -98,17 +98,6 @@ public class RedisConfig{
         return cacheManager;
     }
 
-   /* @Bean
-    public CacheManager cacheManager(RedisConnectionFactory redisConnectionFactory) {
-        RedisCacheManager redisCacheManager = RedisCacheManager.builder(redisConnectionFactory).build();
-        return redisCacheManager;
-    }*/
-   /* public CacheManager cacheManager(RedisTemplate redisTemplate) {
-        RedisCacheManager rcm = new RedisCacheManager(redisTemplate);
-        //设置缓存过期时间
-        //rcm.setDefaultExpiration(60);//秒
-        return rcm;
-    }*/
 
     /**SpringBoot将会自动配置redis，注入相关bean，我们就可以使用@CacheConfig，@Cacheable，@CachePut，@CacheEvict了。*/
 
