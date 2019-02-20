@@ -1,3 +1,7 @@
+
+server:
+  port: 6666
+
 # 配置文件加密key
 jasypt:
   encryptor:
