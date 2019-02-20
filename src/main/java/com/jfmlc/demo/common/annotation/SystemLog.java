@@ -26,3 +26,10 @@ public @interface SystemLog {
      */
     LogType type() default LogType.OPERATION;
 }
+
+
+
+
+
+
+

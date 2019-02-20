@@ -3,12 +3,13 @@ package com.jfmlc.demo.modules.base.domain.user;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableName;
 import com.jfmlc.demo.base.BaseEntity;
-import com.jfmlc.demo.modules.base.domain.user.Role;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.util.List;
 
 /**
@@ -36,6 +37,9 @@ public class User extends BaseEntity {
 
     @ApiModelProperty(value = "头像")
     private String avatar;
+
+    @ApiModelProperty(value = "0女 1男 2保密")
+    private Integer sex;
 
     @Transient
     @TableField(exist=false)

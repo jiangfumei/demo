@@ -23,13 +23,13 @@ public class BootGenerator {
      * 实体类名
      * 建议仅需修改
      */
-    private static final String className = "EsLog";
+    private static final String className = "Department";
 
     /**
      * 类说明描述
      * 建议仅需修改
      */
-    private static final String description = "信息";
+    private static final String description = "部门管理";
 
     /**
      * 作者名
@@ -70,7 +70,7 @@ public class BootGenerator {
      * serviceImpl对应包
      * (文件自动生成至该包下)
      */
-    private static final String serviceImplPackage = "com.jfmlc.demo.modules.base.serviceimpl";
+    private static final String implPackage = "com.jfmlc.demo.modules.base.service.impl";
 
     /**
      * controller对应包
@@ -92,10 +92,10 @@ public class BootGenerator {
         GroupTemplate gt = new GroupTemplate(resourceLoader, cfg);
 
         //生成代码
-        //generateCode(gt);
+        generateCode(gt);
 
         //根据类名删除生成的代码
-        deleteCode(className);
+        //deleteCode(className);
     }
 
     /**
@@ -115,7 +115,7 @@ public class BootGenerator {
         entity.setDomainPackage(domainPackage);
         entity.setDaoPackage(daoPackage);
         entity.setServicePackage(servicePackage);
-        entity.setServiceImplPackage(serviceImplPackage);
+        entity.setServiceImplPackage(implPackage);
         entity.setControllerPackage(controllerPackage);
         entity.setAuthor(author);
         entity.setClassName(className);
@@ -167,7 +167,7 @@ public class BootGenerator {
         String serviceImplResult = serviceImplTemplate.render();
         log.info(serviceImplResult);
         //创建文件
-        String serviceImplFileUrl = System.getProperty("user.dir")+"/src/main/java/"+ dotToLine(serviceImplPackage) + "/" + className + "ServiceImpl.java";
+        String serviceImplFileUrl = System.getProperty("user.dir")+"/src/main/java/"+ dotToLine(implPackage) + "/" + className + "ServiceImpl.java";
         File serviceImplFile = new File(serviceImplFileUrl);
         serviceImplFile.createNewFile();
         out = new FileOutputStream(serviceImplFile);
@@ -211,7 +211,7 @@ public class BootGenerator {
             serviceFile.delete();
         }
 
-        String serviceImplFileUrl = System.getProperty("user.dir")+"/src/main/java/"+ dotToLine(serviceImplPackage) + "/" +className+"ServiceImpl.java";
+        String serviceImplFileUrl = System.getProperty("user.dir")+"/src/main/java/"+ dotToLine(implPackage) + "/" +className+"ServiceImpl.java";
         File serviceImplFile = new File(serviceImplFileUrl);
         if(serviceImplFile.exists()){
             serviceImplFile.delete();

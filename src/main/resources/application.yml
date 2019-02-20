@@ -1,3 +1,7 @@
+
+server:
+  port: 6666
+
 # 配置文件加密key
 jasypt:
   encryptor:
@@ -129,7 +133,7 @@ mybatis-plus:
 demo:
   # ES
   elasticsearch:
-    nodeClient: 39.105.223.19:9200
+    nodeClient: 127.0.0.1:9200
   # 日志记录方式 true使用Elasticsearch记录 false记录至数据库中
   logRecord:
     es: false
